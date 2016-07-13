@@ -1,0 +1,3 @@
+# Ignore Node.js packages */
+node_modules/
+package.json
