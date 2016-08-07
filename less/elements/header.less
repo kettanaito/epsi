@@ -1,0 +1,63 @@
+#header {
+	background: #dae4e6;
+}
+
+#main-menu {
+	@search-button-size: 32px;
+	@link-spacing-top: 2rem;
+	@link-spacing-right: 1.5rem;
+
+	line-height: 12px;
+	margin: 0;
+	padding: 0;
+
+	a {
+		text-decoration: none;
+	}
+
+	/* First-level menu items are in uppercase */
+	> .menu-item {
+		display: inline-block;
+
+		a {
+			.color-main-dim;
+			display: block;
+			font-weight: 700;
+			padding: @link-spacing-top @link-spacing-right;
+			text-transform: uppercase;
+		}
+
+		&.current-menu-item {
+			a {
+				.color-main;
+			}
+		}
+
+		&#menu-item-search {
+			a {
+				.bg-main-dim;
+				.size(@search-button-size);
+				color: #fff;
+				padding: 0;
+				margin-left: @link-spacing-right;
+				text-align: center;
+				line-height: @search-button-size;
+			}
+		}
+	}
+
+}
+
+.subheader {
+	.bg-main-light;
+	padding: 4rem 0;
+	text-align: center;
+
+	h1 {
+		.color-main-dim;
+	}
+
+	+ p {
+		margin-top: -.4375em;
+	}
+}
