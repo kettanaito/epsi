@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-	<title><?php esc_textarea(bloginfo('name')); ?></title>
+	<title><?php page_title(); ?></title>
 	<?php print_indented('wp_head'); ?>
 	<link rel="shortlink" href="<?php echo wp_get_shortlink(); ?>">
 	<!-- META <?php echo get_meta(); ?> -->
@@ -17,31 +17,4 @@
 	<link rel="mask-icon" href="<?php the_url('/images/favicon/safari-pinned-tab.svg'); ?>" color="#00a0f1">
 	<link rel="shortcut icon" href="<?php the_url('/images/favicon/favicon.ico'); ?>">
 </head>
-<body id="<?php echo $post->post_type . '-' . $post->post_name ?>" <?php body_class(); ?>>
-	<header id="header">
-		<div class="container">
-			<div class="row flex" data-mod="align-center">
-				<div class="col-xs-2">
-					<a href="<?php echo bloginfo('url'); ?>">
-						<img src="" alt="<?php bloginfo('name'); ?>">
-					</a>
-				</div>
-				<div class="col-xs-10 text-right">
-					<nav class="main-menu-container">
-						<?php
-							wp_nav_menu(array(
-								'theme_location' => 'primary',
-								'container' => false,
-								'menu_id' => 'main-menu',
-								'walker' => new MV_Cleaner_Walker_Nav_Menu()
-							));
-							echo "\n"
-						?>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</header>
-	<?php the_part('subheader'); ?>
-
-	<main id="content" role="main">
+<body id="<?php the_body_ID(); ?>" <?php body_class(); ?>>

@@ -1,0 +1,48 @@
+/* Regular */
+@font-face {
+	font-family: 'Roboto';
+	src: url('Regular.eot');
+	src: url('Regular.eot?#iefix') format('embedded-opentype'),
+			 url('Regular.ttf') format('truetype'),
+			 url('Regular.woff2') format('woff2'),
+			 url('Regular.woff') format('woff'),
+			 url('Regular.svg') format('svg');
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('Italic.eot');
+	src: url('Italic.eot?#iefix') format('embedded-opentype'),
+			 url('Italic.ttf') format('truetype'),
+			 url('Italic.woff2') format('woff2'),
+			 url('Italic.woff') format('woff'),
+			 url('Italic.svg') format('svg');
+	font-style: italic;
+	font-weight: 400;
+
+/* Black */
+@font-face {
+	font-family: 'Roboto';
+	src: url('Black.eot');
+	src: url('Black.eot?#iefix') format('embedded-opentype'),
+			 url('Black.ttf') format('truetype').
+			 url('Black.woff2') format('woff2'),
+			 url('Black.woff') format('woff'),
+			 url('Black.svg') format('svg');
+	font-style: normal;
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('BlackItalic.eot');
+	src: url('BlackItalic.eot?#iefix') format('embedded-opentype'),
+			 url('BlackItalic.ttf') format('truetype').
+			 url('BlackItalic.woff2') format('woff2'),
+			 url('BlackItalic.woff') format('woff'),
+			 url('BlackItalic.svg') format('svg');
+	font-style: italic;
+	font-weight: 900;
+}

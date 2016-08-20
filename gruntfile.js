@@ -29,6 +29,20 @@ module.exports = function (grunt) {
 				files: {
 					'assets/css/style.css': 'less/style.less'
 				}
+			},
+			vendor: {
+				options: {
+					compress: true,
+					yiucompress: true,
+					optimization: 4
+				},
+				files: [{
+					expand: true,
+					cwd: 'less/',
+					src: 'vendor/*.less',
+					dest: 'assets/css/',
+					ext: '.min.css'
+				}]
 			}
 		},
 
@@ -51,13 +65,12 @@ module.exports = function (grunt) {
 			},
 			fonts: {
 				files: {
-					// WIP: relative path to rebase
 					'assets/css/fonts/local.css': 'assets/css/fonts/**/font-face.css'
 				}
 			},
 			dist: {
 				files: {
-					'assets/css/style.min.css': 'assets/css/style.css'
+					'assets/css/style.min.css': ['assets/css/style.css', 'assets/css/fonts/local.css']
 				}
 			}
 		},
@@ -71,12 +84,20 @@ module.exports = function (grunt) {
 					],
 					browserifyOptions: { debug: true }
 				},
-				files: [{
+				files: [
+				{
 					expand: true,
 					src: 'js/*.js',
 					dest: 'assets/',
 					ext: '.min.js'
-				}]
+				},
+				{
+					expand: true,
+					src: 'js/vendor/*.js',
+					dest: 'assets/',
+					ext: '.min.js'
+				}
+				]
 			}
 		},
 
@@ -93,6 +114,13 @@ module.exports = function (grunt) {
 					expand: true,
 					src: 'assets/js/*.js'
 				}]
+			},
+			vendor: {
+				files: {
+					expand: true,
+					src: 'assets/js/vendor/',
+					ext: '.min.js'
+				}
 			}
 		},
 
@@ -117,5 +145,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('css', ['less', 'autoprefixer', 'cssmin']);
 	grunt.registerTask('fonts', ['cssmin:fonts']);
 	grunt.registerTask('dev', ['fonts', 'css', 'browserify', 'eslint', 'uglify', 'watch']);
-
+	grunt.registerTask('default', ['dev']);
 }

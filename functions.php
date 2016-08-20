@@ -10,6 +10,7 @@ function p($s) {
 /* Constants */
 define(THEME_NAME, 'epsi');
 define(THEME_URL, get_template_directory_uri());
+define(DIRECTORY_PARTS, 'parts/');
 
 /* Hide WordPress admin bar */
 add_filter('show_admin_bar', '__return_false');
@@ -55,7 +56,7 @@ function indent($depth) {
 }
 
 /* Custom Menu Walker */
-class MV_Cleaner_Walker_Nav_Menu extends Walker {
+class Main_Menu_Walker extends Walker {
 		var $tree_type = array('post_type', 'taxonomy', 'custom');
 		var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
 
@@ -104,7 +105,7 @@ class MV_Cleaner_Walker_Nav_Menu extends Walker {
 add_filter('wp_nav_menu_items', 'add_nav_menu_items', 10, 2);
 function add_nav_menu_items( $items, $args, $depth ) {
 	$search_item = "\n" . indent($depth + 1) . "<li id=\"menu-item-search\" class=\"menu-item\">\n";
-	$search_item .= indent($depth + 2) . "<a href=\"#\">S</a>\n";
+	$search_item .= indent($depth + 2) . "<a href=\"#\"><span class=\"fa fa-search\"></span></a>\n";
 	$search_item .= indent($depth + 1) . "</li>";
 	$search_item .= "\n" . indent($depth);
 	return $items . $search_item;
@@ -144,11 +145,16 @@ add_filter('script_loader_tag', 'script_hide_type');
 add_theme_support('post-thumbnails');
 
 /* Clean <body> classes */
-add_filter('body_class', 'body_class_blacklist', 10, 2);
+add_filter('body_class', 'body_class_filter', 10, 2);
 
-function body_class_blacklist($wp_classes, $extra_classes) {
+function body_class_filter($wp_classes, $extra_classes) {
 	/* List of the forbidden WP generated classes */
-	$blacklist = ['logged-in', 'page-id', 'page-template-default'];
+	$blacklist = [
+		'blog',
+		'logged-in',
+		'page-id',
+		'page-template'
+	];
 
 	/* Filter the body classes */
 	foreach ($blacklist as $forbiddenClass) {
@@ -161,6 +167,42 @@ function body_class_blacklist($wp_classes, $extra_classes) {
 
 	/* Add the extra classes back untouched */
 	return array_merge($wp_classes, (array) $extra_classes);
+}
+
+/* Page title */
+function page_title() {
+	$site_name = esc_textarea(bloginfo('name'));
+
+	if (is_home()) {
+		$description = esc_textarea(bloginfo('description'));
+		$site_name .= $description;
+	} else {
+		global $post;
+		$page_name = get_the_title();
+		$site_name .= ' » ' . $page_name;
+	}
+
+	echo $site_name;
+}
+
+/* Body: Form ID string */
+function the_body_ID() {
+	global $post;
+	$id = [$post->post_type, $post->post_name];
+
+	/* Remove empty values */
+	$id = array_filter($id);
+
+	/* Check if post_type AND post_name are present */
+	if (count($id) > 0) {
+		$return = join('-', $id);
+	} else {
+		if (is_home() || is_front_page()) {
+			$return = 'page-home';
+		}
+	}
+
+	echo $return;
 }
 
 /* Get meta */
@@ -206,7 +248,7 @@ function theme_assets() {
 	/* Include assets */
 	theme_assign_assets(array(
 
-		/* Site-wide assets */
+		/* Global assets */
 		'all' => array(
 
 			'styles' => array(
@@ -214,6 +256,10 @@ function theme_assets() {
 			),
 
 			'scripts' => array(
+				'jquery' => array(
+					'url' => get_url('assets/js/jquery.min.js')
+				),
+
 				'fout' => array(
 					'url' => get_url('assets/js/fout.min.js'),
 					'in_footer' => false
@@ -221,6 +267,21 @@ function theme_assets() {
 				'theme' => array(
 					'url' => get_url('assets/js/script.min.js'),
 					'dependency' => 'jquery'
+				)
+			)
+		),
+
+		/* Home page */
+		'home' => array(
+			'scripts' => array(
+
+				'slick' => array(
+					'url' => get_url('assets/js/vendor/slick.min.js'),
+					'dependency' => 'jquery'
+				),
+				'front-page' => array(
+					'url' => get_url('assets/js/front-page.min.js'),
+					'dependency' => ['slick']
 				)
 			)
 		)
@@ -283,9 +344,23 @@ function theme_assign_assets($data) {
 }
 
 /* Layout */
+function content_begin($content_classes) {
+	include(locate_template(get_part('content-begin')));
+}
+
+function content_end() {
+	include(locate_template(get_part('content-end')));
+}
+
+function page_header($header_classes = []) {
+	include(locate_template(get_part('header')));
+}
 
 /* Shorthand: Get template part */
+function get_part($filename) {
+	return DIRECTORY_PARTS . $filename . '.php';
+}
+
 function the_part($filename) {
-	$parts_directory = 'parts/';
-	return get_template_part($parts_directory . $filename);
+	include(locate_template(get_part($filename)));
 }

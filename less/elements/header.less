@@ -1,5 +1,32 @@
 #header {
 	background: #dae4e6;
+	.color-main-dim;
+
+	&.transparent {
+		background: fade(#fff, 3%);
+		color: #ccc;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 5;
+
+		&:after {
+			background: fade(#fff, 10%);
+			content: '';
+			height: 1px;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 100%;
+		}
+
+		a {
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
 }
 
 #main-menu {
@@ -20,7 +47,6 @@
 		display: inline-block;
 
 		a {
-			.color-main-dim;
 			display: block;
 			font-weight: 700;
 			padding: @link-spacing-top @link-spacing-right;
@@ -34,6 +60,7 @@
 		}
 
 		&#menu-item-search {
+
 			a {
 				.bg-main-dim;
 				.size(@search-button-size);
@@ -43,6 +70,13 @@
 				text-align: center;
 				line-height: @search-button-size;
 			}
+
+			.fa {
+				font-size: .8rem;
+				margin-top: -1px;
+				vertical-align: middle;
+			}
+
 		}
 	}
 
