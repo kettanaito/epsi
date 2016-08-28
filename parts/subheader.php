@@ -1,11 +1,17 @@
+<?php
+	$page_description = get_field('page_description');
+	if (!empty($page_description)) {
+?>
+
 <section class="subheader">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-6 col-xs-push-3">
-					<h1><?php the_title(); ?></h1>
-					<p class="text-larger">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-xs-push-3">
+				<h1><?php the_title(); ?></h1>
+				<?php echo $page_description; ?>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
+
+<?php } ?>

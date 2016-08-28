@@ -1,5 +1,10 @@
-<?php /* Template name: Materials */ ?>
-<?php get_header(); ?>
+<?php
+	/* Template name: Materials */
+	get_header();
+	page_header();
+	page_subheader();
+	content_begin();
+?>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -106,4 +111,8 @@
 	</div>
 
 	</div>
-<?php get_footer(); ?>
+
+<?php
+	content_end();
+	get_footer();
+?>

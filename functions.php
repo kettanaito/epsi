@@ -356,6 +356,10 @@ function page_header($header_classes = []) {
 	include(locate_template(get_part('header')));
 }
 
+function page_subheader() {
+	include(locate_template(get_part('subheader')));
+}
+
 /* Shorthand: Get template part */
 function get_part($filename) {
 	return DIRECTORY_PARTS . $filename . '.php';

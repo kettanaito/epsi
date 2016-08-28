@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="rows">
-				<p>(c) "EPSI", 2016. Все права защищены.</p>
+				<p>© "EPSI", 2016. Все права защищены.</p>
 			</div>
 		</div>
 	</footer>
