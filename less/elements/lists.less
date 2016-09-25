@@ -1,8 +1,35 @@
+.list-default {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Projects */
+.list-projects {
+	.list-default;
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		color: @color-gray;
+		margin-top: 0;
+	}
+}
+
+/* Plates */
 .plates {
 	@columns: 8;
 	@size-item: percentage(1 / @columns);
 
-	.list-clear;
+	.list-default;
 	.clearfix;
 	margin-top: 1.5rem;
 
@@ -23,5 +50,19 @@
 		img {
 			.size(100%);
 		}
+	}
+}
+
+/* Social */
+.list-social {
+	@size-item: 2.5rem;
+
+	.list-default;
+
+	li {
+		display: inline-block;
+
+		background: rgba(255,255,255, .5);
+		.size(@size-item);
 	}
 }

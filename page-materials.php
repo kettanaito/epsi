@@ -110,8 +110,6 @@
 		<a href="#">More variations</a>
 	</div>
 
-	</div>
-
 <?php
 	content_end();
 	get_footer();
