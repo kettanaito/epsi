@@ -4,10 +4,9 @@
 			<div class="row">
 				<div class="col-xs-4">
 					<h4><?php _e('Кратко о нас', THEME_NAME); ?></h4>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
+					<p>Мы - команда профессионалов, которая занимается изготовлением корпусной мебели любого уровня сложности. Наш приоритет это безкомпромиссное качество работы и довольные клиенты.</p>
+					<p>Используя только наилучшие материалы и современные технологии, мы воплощаем Ваши мебельные мечты в реальность</p>
+					<a class="button" href="#">Узнать больше</a>
 				</div>
 				<div class="col-xs-4">
 					<h4><?php _e('Недавние проекты', THEME_NAME); ?></h4>
@@ -43,7 +42,14 @@
 				</div>
 			</div>
 			<div class="row">
-				<p>© "EPSI", 2016. Все права защищены.</p>
+				<div class="post-footer">
+					<div class="col-sm-6">
+						<p>© "EPSI", 2016. Все права защищены.</p>
+					</div>
+					<div class="col-sm-6 text-right">
+						<p>Дизайн и разработка - <a href="#">Stormshore</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
