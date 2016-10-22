@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					'assets/css/style.css': 'less/style.less'
+					'assets/css/main.css': 'less/main.less'
 				}
 			},
 			vendor: {
@@ -70,7 +70,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'assets/css/style.min.css': ['assets/css/style.css', 'assets/css/fonts/local.css']
+					'assets/css/main.min.css': ['assets/css/main.css', 'assets/css/fonts/local.css']
 				}
 			}
 		},

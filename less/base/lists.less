@@ -1,0 +1,111 @@
+/* Unstyled list */
+.list-unstyled {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Spacing */
+.li-spaced-horizontal {
+	display: inline-block;
+
+	&:not(:last-of-type) {
+		margin-right: .5rem;
+	}
+}
+
+.li-spaced-vertical {
+	&:not(:last-of-type) {
+		margin-bottom: .5rem;
+	}
+}
+
+/* Projects */
+.list-projects {
+	.list-unstyled;
+
+	li {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	p {
+		color: @color-gray;
+		.font-smaller;
+		margin-top: 0;
+	}
+}
+
+/* Plates */
+.plates {
+	@columns: 8;
+	@size-item: percentage(1 / @columns);
+
+	.list-unstyled;
+	.clearfix;
+	margin-top: 1.5rem;
+
+	li {
+		display: inline-block;
+		float: left;
+		position: relative;
+
+		background: @color-gray;
+		overflow: hidden;
+		width: @size-item;
+
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+
+		img {
+			.size(100%);
+		}
+	}
+}
+
+/* Contacts */
+.list-contacts {
+	.list-unstyled;
+
+	li {
+		.li-spaced-vertical;
+		position: relative;
+		padding-left: 2rem;
+
+		&:before {
+			.fa-icon;
+			font-size: 1.2rem;
+			position: absolute;
+			left: 0;
+		}
+
+		&.address:before {
+			content: '\f041';
+		}
+
+		&.email:before {
+			content: '\f0e0';
+		}
+
+		&.phone:before {
+			content: '\f095';
+		}
+	}
+}
+
+/* Social */
+.list-social {
+	.list-unstyled;
+
+	li {
+		.li-spaced-horizontal;
+	}
+}

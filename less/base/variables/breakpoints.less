@@ -1,0 +1,24 @@
+/* Breakpoints */
+@breakpoint-options: ~'only screen and';
+@screen-xs-start: 480px;
+@screen-sm-start: 768px;
+@screen-md-start: 992px;
+@screen-lg-start: 1200px;
+
+@screen-xs-end: (@screen-sm-start - 1);
+@screen-sm-end: (@screen-md-start - 1);
+@screen-md-end: (@screen-lg-start - 1);
+
+@from-xs: ~'@{breakpoint-options} (min-width: @{screen-xs-start})';
+@xs: ~'@{to-sm}';
+
+@from-sm: ~'@{breakpoint-options} (min-width: @{screen-sm-start})';
+@to-sm: ~'(max-width: @{screen-xs-end})';
+@sm: ~'@{from-sm} and @{to-md}';
+
+@from-md: ~'@{breakpoint-options} (min-width: @{screen-md-start})';
+@to-md: ~'(max-width: @{screen-sm-end})';
+@md: ~'@{from-md} and @{to-lg}';
+
+@to-lg: ~'(max-width: @{screen-md-end})';
+@from-lg: ~'@{breakpoint-options} (min-width: @{screen-lg-start})';

@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-	<meta name="format-detection" content="telephone=no">
 	<title><?php page_title(); ?></title>
 	<?php print_indented('wp_head'); ?>
 	<link rel="shortlink" href="<?php echo wp_get_shortlink(); ?>">

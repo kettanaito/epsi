@@ -252,7 +252,7 @@ function theme_assets() {
 		'all' => array(
 
 			'styles' => array(
-				'theme' => get_url('assets/css/style.min.css')
+				'theme' => get_url('assets/css/main.min.css')
 			),
 
 			'scripts' => array(
