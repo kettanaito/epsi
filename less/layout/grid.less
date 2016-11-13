@@ -1,9 +1,11 @@
 /* Bootstrap: Grid */
+@gutter-width: 15px;
+
 .container {
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @gutter-width;
+	padding-right: @gutter-width;
 }
 
 @media @from-sm {
@@ -27,13 +29,13 @@
 .container-fluid {
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @gutter-width;
+	padding-right: @gutter-width;
 }
 
 .row {
-	margin-left: -15px;
-	margin-right: -15px;
+	margin-left: -@gutter-width;
+	margin-right: -@gutter-width;
 }
 
 .col-xs-1,
@@ -86,8 +88,8 @@
 .col-lg-12 {
 	position: relative;
 	min-height: 1px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @gutter-width;
+	padding-right: @gutter-width;
 }
 .col-xs-1,
 .col-xs-2,

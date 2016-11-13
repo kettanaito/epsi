@@ -1,31 +1,48 @@
 #footer {
-	background: @color-gray-dark;
-	color: #fff;
-	padding: 3rem 0;
+    background: @color-gray-dark;
+    color: #fff;
+    padding: 3rem 0 2rem;
+    position: relative;
 
-	h4 {
-		color: @color-gray;
-		text-align: center;
-	}
+    h4 {
+        color: @color-gray;
+        text-align: center;
+    }
 
-	.button {
-		.font-smaller;
-	}
+    .button {
+        .font-smaller;
+    }
 
-	.footer-section {
-		& + & {
-			margin-top: 3rem;
-		}
-	}
+    .footer-section {
+        & + & {
+            margin-top: 3rem;
+        }
+    }
 
-	.list-social {
-		text-align: center;
-	}
+    .list-social {
+        text-align: center;
+    }
+
+    .button-top {
+        border-color: fade(@color-gray, 35%);
+        color: @color-gray;
+
+        &:hover {
+            border-color: #fff;
+            box-shadow: none;
+            color: #fff;
+        }
+    }
 }
 
 .post-footer {
-	border-top: 1px solid rgba(255,255,255, .1);
-	margin-top: 2rem;
-	padding-top: .5rem;
-	.font-smaller;
+    .clearfix;
+    border-top: 1px solid rgba(255,255,255, .1);
+    margin-top: 2rem;
+    padding-top: 2rem;
+    .font-smaller;
+
+    p {
+        margin: 0;
+    }
 }

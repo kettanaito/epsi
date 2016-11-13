@@ -1,13 +1,32 @@
 .section {
-	padding: 4rem 0;
+    padding: 4rem 0;
 
-	&:nth-child(even) {
-		.bg-main-light;
-	}
+    &:nth-child(even) {
+        .bg-main-light;
+    }
 }
 
 .section-spaced {
-	& + & {
-		margin-top: 3rem;
-	}
+    & + & {
+        margin-top: 3rem;
+    }
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: @color-main-light;
+
+    h3 {
+        color: @color-main-dim;
+        text-align: center;
+        text-transform: uppercase;
+        margin: 2rem 0;
+        display: inline-block;
+        width: 100%;
+    }
+
+    /* Sidebar @projects */
+    #page-projects & {
+        margin: @gutter-width * 2 0;
+    }
 }

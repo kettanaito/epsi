@@ -3,29 +3,42 @@
 
 /* Shorthands */
 .flex { display: flex; }
+.flex-inline { display: inline-flex; }
+
+.center-flex-inline {
+    .flex-inline;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-flex {
+    .flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* Shorthands */
 .no-underline { text-decoration: none; }
 
 /* Resets */
 .clearfix {
-	&:before,
-	&:after {
-		content: '';
-		clear: both;
-		display: table;
-	}
+    &:before,
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
 }
 
 /* Mixins */
 .size(@size) {
-	height: @size;
-	width: @size;
+    height: @size;
+    width: @size;
 }
 
 .font-size(@size) {
-	font-size: @size;
-	line-height: @size * 1.5;
+    font-size: @size;
+    line-height: @size * 1.5;
 }
 
 /* Modifiers */
@@ -38,12 +51,12 @@
 
 /* Vertical alignment */
 [data-mod~='align-center'] {
-	& { vertical-align: middle; }
+    & { vertical-align: middle; }
 
-	.flex& { align-items: center; }
-	.flex & { align-self: center; }
+    .flex& { align-items: center; }
+    .flex & { align-self: center; }
 }
 
 [data-mod~='align-top'] {
-	vertical-align: top;
+    vertical-align: top;
 }
