@@ -44,10 +44,10 @@
                     <section class="section-spaced contacts">
                         <h4><?php _e('Контакты', THEME_NAME); ?></h4>
                         <ul class="list-contacts">
-                            <li class="address"><span>г. Полтава, 36000, Украина</span></li>
-                            <li class="email"><span>info@epsi.com.ua</span></li>
-                            <li class="phone"><span>+38 (050) 442 90 25</span></li>
-                            <li class="phone"><span>+38 (066) 586 44 02</span></li>
+                            <li class="icon address"><span>г. Полтава, 36000, Украина</span></li>
+                            <li class="icon email"><span>info@epsi.com.ua</span></li>
+                            <li class="icon phone"><span>+38 (050) 442 90 25</span></li>
+                            <li class="icon phone"><span>+38 (066) 586 44 02</span></li>
                         </ul>
                     </section>
                     <section class="section-spaced social">

@@ -193,24 +193,65 @@
         position: relative;
         padding-left: 2rem;
 
+        // &:before {
+        //     .fa-icon;
+        //     position: absolute;
+        //     left: 0;
+        // }
+
+        // &.address:before {
+        //     content: '\f041';
+        // }
+
+        // &.email:before {
+        //     content: '\f0e0';
+        // }
+
+        // &.phone:before {
+        //     content: '\f095';
+        // }
+    }
+
+    .icon {
         &:before {
-            .fa-icon;
             font-size: 1.2rem;
-            position: absolute;
-            left: 0;
         }
+    }
+}
 
-        &.address:before {
-            content: '\f041';
-        }
+.list-employees {
+    .clearfix;
+    .list-unstyled;
 
-        &.email:before {
-            content: '\f0e0';
-        }
+    li {
+        display: inline-block;
+        float: left;
+        width: 50%;
+    }
 
-        &.phone:before {
-            content: '\f095';
+    p {
+        margin-top: 0;
+        margin-bottom: .25rem;
+
+        &:last-child {
+            margin-bottom: 1.5rem;
         }
+    }
+
+    .name {
+        font-weight: bold;
+    }
+
+    .position {
+        display: inline-block;
+        margin: 0;
+        margin-bottom: .5rem;
+        padding: 0 .5rem;
+
+        border: 1px solid @color-main;
+        border-radius: 3px;
+        color: @color-main;
+        font-size: .9rem;
     }
 }
 

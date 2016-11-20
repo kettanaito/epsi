@@ -3,3 +3,17 @@
     font-family: FontAwesome;
     font-size: inherit;
 }
+
+.icon {
+    position: relative;
+
+    &:before {
+        .fa-icon;
+        position: absolute;
+        left: 0;
+    }
+
+    &.email {
+        content: '\f0e0';
+    }
+}

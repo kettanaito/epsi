@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3><?php _e('Отправить сообщение', THEME_NAME); ?></h3>
-                    <form>
+                    <form class="text-right">
                         <input type="text" placeholder="<?php _e('Ваше имя', THEME_NAME); ?>">
                         <input type="email" placeholder="<?php _e('Электронный адрес', THEME_NAME); ?>">
                         <input type="tel" placeholder="<?php _e('Телефон', THEME_NAME); ?>">
@@ -24,7 +24,7 @@
                     <p>Street name and number</p>
                     <section>
                         <h3><?php _e('Наша команда', THEME_NAME); ?></h3>
-                        <ul>
+                        <ul class="list-employees">
                             <li>
                                 <p class="name">Kate Johnson</p>
                                 <p class="position">Manager</p>
